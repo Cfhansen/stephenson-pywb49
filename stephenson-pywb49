@@ -1,0 +1,26 @@
+###Solution to problem 49 from ben stephenson's "the python workbook".
+
+print("Enter a magnitude:")
+magnitude = float(input())
+
+if magnitude < 0:
+  magnitude = 0
+
+richter = { 0: 'Micro',
+            2: 'Very minor',
+            3: 'Minor',
+            4: 'Light',
+            5: 'Moderate',
+            6: 'Strong',
+            7: 'Major',
+            8: 'Great',
+            10: 'Meteoric' }
+
+magnitudes = [i for i in richter.keys()]
+result = ''
+
+for i in magnitudes:
+  if magnitude >= i:
+    result = richter.get(i)
+
+print(f'That is a {result} earthquake.')
